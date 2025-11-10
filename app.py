@@ -17,82 +17,73 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for beautiful gradient background and glass morphism
+# Custom CSS for sleek black theme
 st.markdown("""
 <style>
-    /* Main background with animated gradient */
+    /* Main background with dark theme */
     .stApp {
-        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-        background-size: 400% 400%;
-        animation: gradient 15s ease infinite;
+        background: #0f0f0f;
         min-height: 100vh;
     }
     
-    @keyframes gradient {
-        0% { background-position: 0% 50% }
-        50% { background-position: 100% 50% }
-        100% { background-position: 0% 50% }
-    }
-    
-    /* Main container with glass morphism effect */
+    /* Main container with dark glass effect */
     .main-container {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(20, 20, 20, 0.8);
         backdrop-filter: blur(20px);
-        border-radius: 25px;
+        border-radius: 20px;
         padding: 2.5rem;
         margin: 1rem;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
     
-    /* Sidebar glass effect */
+    /* Sidebar dark effect */
     .sidebar .sidebar-content {
-        background: rgba(255, 255, 255, 0.1) !important;
+        background: rgba(20, 20, 20, 0.9) !important;
         backdrop-filter: blur(20px);
-        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     /* Header styling */
     .main-header {
         font-size: 3.5rem;
-        background: linear-gradient(90deg, #ffffff, #f0f0f0, #e0e0e0);
+        background: linear-gradient(90deg, #ffffff, #cccccc, #999999);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-align: center;
         margin-bottom: 1rem;
         font-weight: 800;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
     
     .sub-header {
         text-align: center;
         font-size: 1.3rem;
-        color: rgba(255, 255, 255, 0.9);
+        color: rgba(255, 255, 255, 0.8);
         margin-bottom: 2rem;
         font-weight: 500;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
     
-    /* Card styling with glass effect */
+    /* Card styling with dark glass effect */
     .glass-card {
-        background: rgba(255, 255, 255, 0.15);
+        background: rgba(30, 30, 30, 0.7);
         backdrop-filter: blur(15px);
-        border-radius: 20px;
+        border-radius: 15px;
         padding: 2rem;
         margin: 1.5rem 0;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
     }
     
     /* Quote box styling */
     .quote-box {
-        background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+        background: linear-gradient(135deg, rgba(40, 40, 40, 0.9), rgba(60, 60, 60, 0.9));
         padding: 2rem;
-        border-radius: 20px;
+        border-radius: 15px;
         color: white;
         margin: 1.5rem 0;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
         text-align: center;
         font-size: 1.2rem;
         font-style: italic;
@@ -102,35 +93,36 @@ st.markdown("""
     .emotion-result {
         text-align: center;
         padding: 2rem;
-        border-radius: 20px;
+        border-radius: 15px;
         margin: 1.5rem 0;
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(40, 40, 40, 0.8);
         border-left: 6px solid;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
         backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     .happy { 
         border-color: #4CAF50; 
-        background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(255, 255, 255, 0.1));
+        background: linear-gradient(135deg, rgba(76, 175, 80, 0.15), rgba(40, 40, 40, 0.8));
     }
     .sad { 
         border-color: #2196F3; 
-        background: linear-gradient(135deg, rgba(33, 150, 243, 0.2), rgba(255, 255, 255, 0.1));
+        background: linear-gradient(135deg, rgba(33, 150, 243, 0.15), rgba(40, 40, 40, 0.8));
     }
     .angry { 
         border-color: #f44336; 
-        background: linear-gradient(135deg, rgba(244, 67, 54, 0.2), rgba(255, 255, 255, 0.1));
+        background: linear-gradient(135deg, rgba(244, 67, 54, 0.15), rgba(40, 40, 40, 0.8));
     }
     .neutral { 
         border-color: #9E9E9E; 
-        background: linear-gradient(135deg, rgba(158, 158, 158, 0.2), rgba(255, 255, 255, 0.1));
+        background: linear-gradient(135deg, rgba(158, 158, 158, 0.15), rgba(40, 40, 40, 0.8));
     }
     
     /* Progress bar styling */
     .stProgress > div > div > div > div {
-        background: linear-gradient(90deg, #FF6B6B, #4ECDC4);
-        border-radius: 10px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 8px;
     }
     
     /* Button styling */
@@ -138,7 +130,7 @@ st.markdown("""
         background: linear-gradient(135deg, #667eea, #764ba2);
         color: white;
         border: none;
-        border-radius: 15px;
+        border-radius: 12px;
         padding: 0.7rem 2rem;
         font-weight: 600;
         font-size: 1rem;
@@ -146,40 +138,66 @@ st.markdown("""
     }
     
     .stButton>button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
     }
     
     /* File uploader styling */
     .uploadedFile {
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 15px;
+        background: rgba(40, 40, 40, 0.8);
+        border-radius: 12px;
         padding: 1rem;
-        border: 2px dashed rgba(255, 255, 255, 0.3);
+        border: 2px dashed rgba(255, 255, 255, 0.2);
     }
     
     /* Radio button styling */
     .stRadio > div {
-        background: rgba(255, 255, 255, 0.15);
+        background: rgba(40, 40, 40, 0.8);
         padding: 1.5rem;
-        border-radius: 15px;
+        border-radius: 12px;
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     /* Text input styling */
     .stTextInput>div>div>input {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(40, 40, 40, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         color: white;
-        border-radius: 10px;
+        border-radius: 8px;
     }
     
     /* Chart background */
     .stPlotlyChart {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
+        background: rgba(40, 40, 40, 0.8);
+        border-radius: 12px;
         padding: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Custom styling for text elements */
+    .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown h4, .stMarkdown h5, .stMarkdown h6 {
+        color: white !important;
+    }
+    
+    .stMarkdown p, .stMarkdown div {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    /* Camera input styling */
+    .stCameraInput {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    
+    /* File uploader label */
+    .stFileUploader label {
+        color: white !important;
+    }
+    
+    /* Radio button labels */
+    .stRadio label {
+        color: white !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -246,9 +264,9 @@ def map_emotion(raw_emotion):
         return "sad"
     return "neutral"
 
-# --- Sidebar with enhanced styling ---
+# --- Sidebar with dark styling ---
 st.sidebar.markdown("""
-<div style='background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)); padding: 1.5rem; border-radius: 15px; color: white; text-align: center; margin-bottom: 1rem;'>
+<div style='background: linear-gradient(135deg, rgba(40, 40, 40, 0.9), rgba(60, 60, 60, 0.9)); padding: 1.5rem; border-radius: 12px; color: white; text-align: center; margin-bottom: 1rem;'>
     <h3 style='margin:0;'>🎯 Input Method</h3>
 </div>
 """, unsafe_allow_html=True)
@@ -260,9 +278,9 @@ st.sidebar.markdown("<br>", unsafe_allow_html=True)
 
 # Instructions in sidebar
 st.sidebar.markdown("""
-<div style='background: rgba(255,255,255,0.15); padding: 1.5rem; border-radius: 15px; border-left: 4px solid #667eea; backdrop-filter: blur(10px);'>
+<div style='background: rgba(40, 40, 40, 0.8); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #667eea; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);'>
     <h4 style='margin-top:0; color: white;'>💡 Tips for best results:</h4>
-    <ul style='margin-bottom:0; color: rgba(255,255,255,0.9);'>
+    <ul style='margin-bottom:0; color: rgba(255,255,255,0.8);'>
         <li>Ensure good lighting</li>
         <li>Face the camera directly</li>
         <li>Remove sunglasses/hats</li>
@@ -289,7 +307,7 @@ elif input_method == "Webcam (Camera)":
     col1, col2, col3 = st.columns([1, 3, 1])
     with col2:
         st.markdown("### 📸 Webcam Capture")
-        st.markdown("<p style='text-align: center; color: rgba(255,255,255,0.9);'>Position your face in the center and click the photo</p>", 
+        st.markdown("<p style='text-align: center; color: rgba(255,255,255,0.8);'>Position your face in the center and click the photo</p>", 
                    unsafe_allow_html=True)
         cam_image = st.camera_input("Take a picture", label_visibility="collapsed")
         if cam_image:
@@ -319,9 +337,9 @@ if image is not None:
             results = detector.detect_emotions(np.array(image))
             if not results:
                 st.markdown("""
-                <div style='background: rgba(255,255,255,0.2); padding: 2rem; border-radius: 20px; text-align: center; border-left: 5px solid #ff6b6b; backdrop-filter: blur(10px);'>
+                <div style='background: rgba(40, 40, 40, 0.8); padding: 2rem; border-radius: 15px; text-align: center; border-left: 5px solid #ff6b6b; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);'>
                     <h2 style='color: white;'>❌ No Face Detected</h2>
-                    <p style='color: rgba(255,255,255,0.9);'>Try another image with better lighting or ensure your face is clearly visible</p>
+                    <p style='color: rgba(255,255,255,0.8);'>Try another image with better lighting or ensure your face is clearly visible</p>
                 </div>
                 """, unsafe_allow_html=True)
             else:
@@ -344,20 +362,20 @@ if image is not None:
                 st.markdown(f"""
                 <div class='emotion-result {mapped}'>
                     <h2 style='color: white;'>{emotion_icons[mapped]} Detected Emotion: <strong>{mapped.title()}</strong></h2>
-                    <p style='color: rgba(255,255,255,0.9); font-size: 1.2rem;'>Raw emotion: {raw_emotion} (confidence: {raw_score:.2f})</p>
+                    <p style='color: rgba(255,255,255,0.8); font-size: 1.2rem;'>Raw emotion: {raw_emotion} (confidence: {raw_score:.2f})</p>
                 </div>
                 """, unsafe_allow_html=True)
                 
-                # Chart with better styling
+                # Chart with dark styling
                 st.markdown('<div class="glass-card">', unsafe_allow_html=True)
                 st.markdown("### 📊 Emotion Analysis")
                 labels = [k.title() for k, _ in sorted_em]
                 scores = [v for _, v in sorted_em]
                 
-                # Create a more attractive chart
+                # Create a dark-themed chart
                 fig, ax = plt.subplots(figsize=(10, 6))
-                fig.patch.set_facecolor('none')
-                ax.set_facecolor('none')
+                fig.patch.set_facecolor('#0f0f0f')
+                ax.set_facecolor('#1a1a1a')
                 colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFE66D', '#6A0572', '#AB83A1']
                 bars = ax.barh(labels[::-1], scores[::-1], color=colors[:len(labels)])
                 ax.set_xlim(0, 1)
@@ -366,6 +384,11 @@ if image is not None:
                 ax.set_title("Emotion Probability Distribution", fontsize=14, fontweight='bold', color='white')
                 ax.grid(axis='x', alpha=0.3)
                 ax.tick_params(colors='white')
+                
+                # Set spine colors
+                for spine in ax.spines.values():
+                    spine.set_color('white')
+                    spine.set_alpha(0.3)
                 
                 # Add value labels on bars
                 for bar in bars:
@@ -400,36 +423,36 @@ if image is not None:
                     
         except Exception as e:
             st.markdown(f"""
-            <div style='background: rgba(255,255,255,0.2); padding: 2rem; border-radius: 20px; text-align: center; border-left: 5px solid #ff6b6b; backdrop-filter: blur(10px);'>
+            <div style='background: rgba(40, 40, 40, 0.8); padding: 2rem; border-radius: 15px; text-align: center; border-left: 5px solid #ff6b6b; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1);'>
                 <h2 style='color: white;'>⚠️ Processing Error</h2>
-                <p style='color: rgba(255,255,255,0.9);'>Details: {e}</p>
-                <p style='color: rgba(255,255,255,0.9);'>Please try with a different image.</p>
+                <p style='color: rgba(255,255,255,0.8);'>Details: {e}</p>
+                <p style='color: rgba(255,255,255,0.8);'>Please try with a different image.</p>
             </div>
             """, unsafe_allow_html=True)
 
 else:
     # Welcome state with features
     st.markdown("""
-    <div style='text-align: center; padding: 3rem 2rem; background: rgba(255,255,255,0.15); border-radius: 25px; margin: 2rem 0; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.2);'>
+    <div style='text-align: center; padding: 3rem 2rem; background: rgba(30, 30, 30, 0.7); border-radius: 20px; margin: 2rem 0; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1);'>
         <h2 style='color: white;'>🎭 Ready to Discover Your Emotions?</h2>
-        <p style='font-size: 1.2rem; color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto;'>
+        <p style='font-size: 1.2rem; color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto;'>
             Upload a photo or use your webcam to detect facial emotions and get personalized quotes!
         </p>
         <div style='display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap;'>
             <div style='text-align: center; color: white;'>
                 <div style='font-size: 3rem;'>📁</div>
                 <strong style='font-size: 1.2rem;'>Upload Image</strong>
-                <p style='font-size: 1rem; color: rgba(255,255,255,0.8);'>JPG, PNG formats</p>
+                <p style='font-size: 1rem; color: rgba(255,255,255,0.7);'>JPG, PNG formats</p>
             </div>
             <div style='text-align: center; color: white;'>
                 <div style='font-size: 3rem;'>📸</div>
                 <strong style='font-size: 1.2rem;'>Webcam Capture</strong>
-                <p style='font-size: 1rem; color: rgba(255,255,255,0.8);'>Real-time detection</p>
+                <p style='font-size: 1rem; color: rgba(255,255,255,0.7);'>Real-time detection</p>
             </div>
             <div style='text-align: center; color: white;'>
                 <div style='font-size: 3rem;'>💬</div>
                 <strong style='font-size: 1.2rem;'>Get Quotes</strong>
-                <p style='font-size: 1rem; color: rgba(255,255,255,0.8);'>Personalized messages</p>
+                <p style='font-size: 1rem; color: rgba(255,255,255,0.7);'>Personalized messages</p>
             </div>
         </div>
     </div>
@@ -438,7 +461,7 @@ else:
 # Footer
 st.markdown("---")
 st.markdown("""
-<div style='text-align: center; color: rgba(255,255,255,0.8);'>
+<div style='text-align: center; color: rgba(255,255,255,0.7);'>
     <p style='font-size: 1.1rem;'>Built with ❤️ using Streamlit & FER | Emotion Detection AI</p>
 </div>
 """, unsafe_allow_html=True)
@@ -447,14 +470,14 @@ st.markdown('</div>', unsafe_allow_html=True)
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("""
-<div style='text-align: center; color: rgba(255,255,255,0.8); font-size: 0.9rem;'>
+<div style='text-align: center; color: rgba(255,255,255,0.7); font-size: 0.9rem;'>
     <p>Using pretrained FER model (mtcnn=True)</p>
 </div>
 """, unsafe_allow_html=True)
 
 st.sidebar.markdown("<br><br>", unsafe_allow_html=True)
 st.sidebar.markdown("""
-<div style='text-align: center; color: rgba(255,255,255,0.6); font-size: 0.8rem;'>
-    <p>✨ Magical Emotion Detection ✨</p>
+<div style='text-align: center; color: rgba(255,255,255,0.5); font-size: 0.8rem;'>
+    <p>✨ Dark Theme Emotion Detection ✨</p>
 </div>
 """, unsafe_allow_html=True)
